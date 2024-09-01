@@ -38,3 +38,53 @@ anime({
 	direction: "alternate",
 	loop: true,
 });
+
+const buttons = document.querySelectorAll(".meeting");
+const closeButton = document.querySelectorAll(".meeting-close");
+const modal = document.getElementById("modal");
+
+buttons.forEach((button) => {
+	button.addEventListener("click", () => {
+		modal.showModal();
+	});
+});
+closeButton.forEach((button) => {
+	button.addEventListener("click", () => {
+		modal.close();
+	});
+});
+
+function onModalSubmit(event) {
+	event.preventDefault();
+
+	const name = event.target[0].value;
+	const email = event.target[1].value;
+	const phone = event.target[2].value;
+	const status = document.getElementById("form-status");
+
+	if (!name || !email || !phone) {
+		status.textContent = "Preencha todos os campos.";
+		status.style.color = "red";
+		return;
+	}
+
+	if (!email.includes("@")) {
+		status.textContent = "Email inválido.";
+		status.style.color = "red";
+		return;
+	}
+
+	if (phone.length !== 15) {
+		status.textContent = "Telefone inválido.";
+		status.style.color = "red";
+		return;
+	}
+
+	if (new RegExp("^[0-9]*$").test(phone.replace(/\D/g, "")) === false) {
+		status.textContent = "Telefone inválido.";
+		status.style.color = "red";
+		return;
+	}
+
+	status.textContent = "Entraremos em contato em breve.";
+}

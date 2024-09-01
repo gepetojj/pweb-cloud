@@ -8,6 +8,52 @@
 		<link rel="stylesheet" href="./static/index.css" />
 	</head>
 	<body class="bg-[#FAFAFC]">
+		<dialog id="modal" class="rounded">
+			<header class="flex justify-end items-center px-2 py-1">
+				<button
+					type="button"
+					class="p-2 text-[#1F2632] duration-200 hover:bg-[#0e3f7e1a] rounded-[6px] meeting-close">
+					Fechar
+				</button>
+			</header>
+			<form class="flex flex-col gap-4 p-6 pt-2 bg-white rounded-[12px]" onsubmit="onModalSubmit(event)">
+				<h2 class="text-center font-bold text-[2.4rem]">Agende uma conversa</h2>
+				<div class="flex flex-col gap-1">
+					<label for="name" class="font-medium text-lg">Nome</label>
+					<input
+						type="text"
+						id="name"
+						name="name"
+						class="p-2 border border-[#0e3f7e1a] rounded-[6px]"
+						placeholder="Fernando Torres" />
+				</div>
+				<div class="flex flex-col gap-1">
+					<label for="email" class="font-medium text-lg">Email</label>
+					<input
+						type="email"
+						id="email"
+						name="email"
+						class="p-2 border border-[#0e3f7e1a] rounded-[6px]"
+						placeholder="fernando@email.com" />
+				</div>
+				<div class="flex flex-col gap-1">
+					<label for="phone" class="font-medium text-lg">Telefone</label>
+					<input
+						type="text"
+						id="phone"
+						name="phone"
+						class="p-2 border border-[#0e3f7e1a] rounded-[6px]"
+						placeholder="(82) 99999-9999" />
+				</div>
+				<span id="form-status" class="font-medium text-md"></span>
+				<button
+					type="submit"
+					class="px-4 py-2 text-white bg-gradient-to-t from-[#4c576b] from-5% to-[#1F2632] rounded-[6px] meeting">
+					Agendar
+				</button>
+			</form>
+		</dialog>
+
 		<main
 			class="flex flex-col gap-10 w-full md:h-[80svh] bg-gradient-to-b from-[#D9EDFB] from-55% to-[#FAFAFC] mb-12 md:mb-0">
 			<header class="flex justify-between items-center w-full px-10 lg:px-[10rem] py-5 lg:py-[3rem]">
@@ -43,7 +89,7 @@
 
 				<button
 					type="button"
-					class="px-4 py-1.5 border border-[#0e3f7e1a] rounded-[6px] duration-200 hover:bg-[#0e3f7e1a]">
+					class="px-4 py-1.5 border border-[#0e3f7e1a] rounded-[6px] duration-200 hover:bg-[#0e3f7e1a] meeting">
 					Entre em contato
 				</button>
 			</header>
@@ -60,7 +106,7 @@
 				<button
 					id="title-button"
 					type="button"
-					class="px-4 py-2 text-white bg-gradient-to-t from-[#4c576b] from-5% to-[#1F2632] rounded-[6px]">
+					class="px-4 py-2 text-white bg-gradient-to-t from-[#4c576b] from-5% to-[#1F2632] rounded-[6px] meeting">
 					Agende uma conversa
 				</button>
 			</section>
@@ -98,7 +144,9 @@
 				<h2 class="font-bold text-[2.4rem]">Começe a economizar no primeiro minuto</h2>
 				<h3 class="text-lg text-[#9BA4B3]">Marque uma chamada com um de nossos especialistas</h3>
 			</div>
-			<button type="button" class="px-4 py-2 text-black bg-[#d2ff00] rounded-[6px] trackable-button relative">
+			<button
+				type="button"
+				class="px-4 py-2 text-black bg-[#d2ff00] rounded-[6px] trackable-button relative meeting">
 				Agende uma conversa
 			</button>
 		</section>
