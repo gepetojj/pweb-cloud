@@ -52,3 +52,13 @@ button {
 		transform: translateX(-100%);
 	}
 }
+
+#trackable-button-shadow {
+	position: absolute;
+	width: 28px;
+	height: 28px;
+	top: 50%;
+	left: 50%;
+	background: #f5f5f5;
+	border-radius: 100%;
+}
